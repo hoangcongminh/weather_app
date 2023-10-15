@@ -9,5 +9,8 @@
   "language": "Language",
   "english": "English",
   "vietnamese": "Vietnamese",
-  "search": "Search"
+  "search": "Search",
+  "tryAgain": "Try Again",
+  "networkError": "Error on getting weather data",
+  "locationError": "Error on getting location"
 }

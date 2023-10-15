@@ -4,3 +4,8 @@ class AppConstant {
   static const String imageURL = "https://openweathermap.org/img/wn/";
   static const String cityURL = "https://geocoding-api.open-meteo.com/v1/";
 }
+
+class ImagesPath {
+  static const locationDisabled = "assets/location_disabled.png";
+  static const networkError = "assets/network_error.png";
+}

@@ -1,5 +1,10 @@
 part of 'weather_bloc.dart';
 
+enum WeatherErrorType {
+  connection,
+  location,
+}
+
 abstract class WeatherState {}
 
 class WeatherInitial extends WeatherState {}
@@ -12,8 +17,9 @@ class WeatherLoaded extends WeatherState {
   WeatherLoaded(this.weather);
 }
 
-class WeatherError extends WeatherState {
+class WeatherFetchError extends WeatherState {
   final String message;
+  final WeatherErrorType type;
 
-  WeatherError(this.message);
+  WeatherFetchError(this.message, {this.type = WeatherErrorType.connection});
 }

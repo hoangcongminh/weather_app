@@ -9,5 +9,8 @@
   "language": "Ngôn ngữ",
   "english": "Tiếng anh",
   "vietnamese": "Tiếng việt",
-  "search": "Tìm kiếm"
+  "search": "Tìm kiếm",
+  "tryAgain": "Thử lại",
+  "networkError": "Lỗi lấy dữ liệu thời tiết",
+  "locationError": "Lỗi khi nhận vị trí"
 }

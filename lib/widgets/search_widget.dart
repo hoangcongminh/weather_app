@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:weather_app/repositories/city_repository.dart';
 import 'package:weather_app/utils/extension.dart';

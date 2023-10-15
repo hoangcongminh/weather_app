@@ -32,7 +32,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         .then(
       (weatherResponse) {
         weatherResponse.fold(
-          (failure) => emit(WeatherError(failure.message)),
+          (failure) => emit(WeatherFetchError(failure.message)),
           (weather) => emit(WeatherLoaded(weather)),
         );
       },
@@ -41,31 +41,37 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   FutureOr<void> _onFetchCurrentLocationWeather(event, emit) async {
     emit(WeatherLoading());
-    await LocationServices.getCurrentLocation().then((value) {
+    await LocationServices.getCurrentLocation().then((position) {
+      currentLat = position.latitude;
+      currentLon = position.longitude;
+      currentIsCelcious = event.isCelcious;
       return weatherRepository
           .featchWeather(
-              lat: event.lat, lon: event.lon, isCelcious: event.isCelcious)
+              lat: position.latitude,
+              lon: position.longitude,
+              isCelcious: event.isCelcious)
           .then(
         (weatherResponse) {
           weatherResponse.fold(
-            (failure) => emit(WeatherError(failure.message)),
+            (failure) => emit(WeatherFetchError(failure.message)),
             (weather) => emit(WeatherLoaded(weather)),
           );
         },
       );
     }).catchError((e) {
-      emit(WeatherError(e.toString()));
+      emit(WeatherFetchError(e.toString(), type: WeatherErrorType.location));
     });
   }
 
   FutureOr<void> _onRefreshWeather(event, emit) async {
+    emit(WeatherLoading());
     await weatherRepository
         .featchWeather(
             lat: currentLat, lon: currentLon, isCelcious: event.isCelcious)
         .then(
       (weatherResponse) {
         weatherResponse.fold(
-          (failure) => emit(WeatherError(failure.message)),
+          (failure) => emit(WeatherFetchError(failure.message)),
           (weather) => emit(WeatherLoaded(weather)),
         );
       },

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/core/application_state_base.dart';
 import 'package:weather_app/blocs/weather_bloc/weather_bloc.dart';
-import 'package:weather_app/services/location_services.dart';
-import 'package:weather_app/widgets/error_widget.dart';
+import 'package:weather_app/core/constants.dart';
 import 'package:weather_app/widgets/search_widget.dart';
 import 'package:weather_app/widgets/weather_info.dart';
 import 'package:weather_app/utils/extension.dart';
+
+import 'error_screen.dart';
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
@@ -81,27 +82,42 @@ class _WeatherPageState extends ApplicationStateBase<WeatherPage>
           ],
         ),
         body: SingleChildScrollView(
-          child: BlocBuilder<WeatherBloc, WeatherState>(
-            builder: (context, state) {
-              if (state is WeatherError) {
-                return ErrorView(
-                  error: state.message,
-                  onRefresh: () {},
-                );
-              } else if (state is WeatherLoaded) {
-                return Center(
-                  child: WeatherInfo(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 64),
+            child: BlocBuilder<WeatherBloc, WeatherState>(
+              builder: (context, state) {
+                if (state is WeatherFetchError) {
+                  return ErrorScreen(
+                    message: state.type == WeatherErrorType.location
+                        ? context.l10n.locationError
+                        : context.l10n.networkError,
+                    imageURL: state.type == WeatherErrorType.location
+                        ? ImagesPath.locationDisabled
+                        : ImagesPath.networkError,
+                    onTryAgain: () {
+                      state.type == WeatherErrorType.location
+                          ? context.read<WeatherBloc>().add(
+                              FetchCurrentLocationWeather(
+                                  applicationBloc.state.isCelsius))
+                          : context.read<WeatherBloc>().add(
+                              RefreshWeather(applicationBloc.state.isCelsius));
+                    },
+                  );
+                } else if (state is WeatherLoaded) {
+                  return WeatherInfo(
                     weather: state.weather,
                     isCelcious: applicationBloc.state.isCelsius,
-                  ),
-                );
-              } else if (state is WeatherLoading) {
-                return const Center(
-                    child: CircularProgressIndicator.adaptive());
-              } else {
-                return const SizedBox.shrink();
-              }
-            },
+                  );
+                } else if (state is WeatherLoading) {
+                  return const Center(
+                    child: CircularProgressIndicator.adaptive(),
+                  );
+                } else {
+                  return const SizedBox.shrink();
+                }
+              },
+            ),
           ),
         ),
       ),
