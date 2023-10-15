@@ -18,6 +18,9 @@ class ApplicationBloc
     on<_ChangeUnit>((event, emit) {
       emit(state.copyWith(isCelsius: event.isCelcious));
     });
+    on<_ChangeLocale>((event, emit) {
+      emit(state.copyWith(locale: event.locale));
+    });
   }
 
   @override

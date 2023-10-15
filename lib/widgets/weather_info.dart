@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/extension.dart';
-import 'package:weather_app/model/weather_model.dart';
+import 'package:weather_app/core/constants.dart';
+import 'package:weather_app/utils/extension.dart';
+import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/widgets/value_titles.dart';
 
 class WeatherInfo extends StatelessWidget {
@@ -49,7 +50,8 @@ class WeatherInfo extends StatelessWidget {
           ),
         ),
         Image.network(
-          "https://openweathermap.org/img/wn/10d@2x.png",
+          "${AppConstant.imageURL}10d@2x.png",
+          filterQuality: FilterQuality.high,
           loadingBuilder: (context, child, loadingProgress) {
             if (loadingProgress == null) return child;
             return const CircularProgressIndicator();

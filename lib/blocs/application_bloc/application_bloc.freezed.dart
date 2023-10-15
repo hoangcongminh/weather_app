@@ -20,18 +20,21 @@ mixin _$ApplicationBlocEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(bool isCelcious) changeUnit,
+    required TResult Function(String locale) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ThemeMode themeMode)? changeTheme,
     TResult? Function(bool isCelcious)? changeUnit,
+    TResult? Function(String locale)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(bool isCelcious)? changeUnit,
+    TResult Function(String locale)? changeLocale,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ApplicationBlocEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeUnit value) changeUnit,
+    required TResult Function(_ChangeLocale value) changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeTheme value)? changeTheme,
     TResult? Function(_ChangeUnit value)? changeUnit,
+    TResult? Function(_ChangeLocale value)? changeLocale,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeUnit value)? changeUnit,
+    TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +148,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(bool isCelcious) changeUnit,
+    required TResult Function(String locale) changeLocale,
   }) {
     return changeTheme(themeMode);
   }
@@ -151,6 +158,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ThemeMode themeMode)? changeTheme,
     TResult? Function(bool isCelcious)? changeUnit,
+    TResult? Function(String locale)? changeLocale,
   }) {
     return changeTheme?.call(themeMode);
   }
@@ -160,6 +168,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(bool isCelcious)? changeUnit,
+    TResult Function(String locale)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeTheme != null) {
@@ -173,6 +182,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeUnit value) changeUnit,
+    required TResult Function(_ChangeLocale value) changeLocale,
   }) {
     return changeTheme(this);
   }
@@ -182,6 +192,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeTheme value)? changeTheme,
     TResult? Function(_ChangeUnit value)? changeUnit,
+    TResult? Function(_ChangeLocale value)? changeLocale,
   }) {
     return changeTheme?.call(this);
   }
@@ -191,6 +202,7 @@ class _$ChangeThemeImpl implements _ChangeTheme {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeUnit value)? changeUnit,
+    TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeTheme != null) {
@@ -276,6 +288,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) changeTheme,
     required TResult Function(bool isCelcious) changeUnit,
+    required TResult Function(String locale) changeLocale,
   }) {
     return changeUnit(isCelcious);
   }
@@ -285,6 +298,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ThemeMode themeMode)? changeTheme,
     TResult? Function(bool isCelcious)? changeUnit,
+    TResult? Function(String locale)? changeLocale,
   }) {
     return changeUnit?.call(isCelcious);
   }
@@ -294,6 +308,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? changeTheme,
     TResult Function(bool isCelcious)? changeUnit,
+    TResult Function(String locale)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeUnit != null) {
@@ -307,6 +322,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeTheme value) changeTheme,
     required TResult Function(_ChangeUnit value) changeUnit,
+    required TResult Function(_ChangeLocale value) changeLocale,
   }) {
     return changeUnit(this);
   }
@@ -316,6 +332,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeTheme value)? changeTheme,
     TResult? Function(_ChangeUnit value)? changeUnit,
+    TResult? Function(_ChangeLocale value)? changeLocale,
   }) {
     return changeUnit?.call(this);
   }
@@ -325,6 +342,7 @@ class _$ChangeUnitImpl implements _ChangeUnit {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeTheme value)? changeTheme,
     TResult Function(_ChangeUnit value)? changeUnit,
+    TResult Function(_ChangeLocale value)? changeLocale,
     required TResult orElse(),
   }) {
     if (changeUnit != null) {
@@ -343,6 +361,145 @@ abstract class _ChangeUnit implements ApplicationBlocEvent {
       throw _privateConstructorUsedError;
 }
 
+/// @nodoc
+abstract class _$$ChangeLocaleImplCopyWith<$Res> {
+  factory _$$ChangeLocaleImplCopyWith(
+          _$ChangeLocaleImpl value, $Res Function(_$ChangeLocaleImpl) then) =
+      __$$ChangeLocaleImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String locale});
+}
+
+/// @nodoc
+class __$$ChangeLocaleImplCopyWithImpl<$Res>
+    extends _$ApplicationBlocEventCopyWithImpl<$Res, _$ChangeLocaleImpl>
+    implements _$$ChangeLocaleImplCopyWith<$Res> {
+  __$$ChangeLocaleImplCopyWithImpl(
+      _$ChangeLocaleImpl _value, $Res Function(_$ChangeLocaleImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$ChangeLocaleImpl(
+      null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeLocaleImpl implements _ChangeLocale {
+  const _$ChangeLocaleImpl(this.locale);
+
+  @override
+  final String locale;
+
+  @override
+  String toString() {
+    return 'ApplicationBlocEvent.changeLocale(locale: $locale)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeLocaleImpl &&
+            (identical(other.locale, locale) || other.locale == locale));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeLocaleImplCopyWith<_$ChangeLocaleImpl> get copyWith =>
+      __$$ChangeLocaleImplCopyWithImpl<_$ChangeLocaleImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ThemeMode themeMode) changeTheme,
+    required TResult Function(bool isCelcious) changeUnit,
+    required TResult Function(String locale) changeLocale,
+  }) {
+    return changeLocale(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+    TResult? Function(bool isCelcious)? changeUnit,
+    TResult? Function(String locale)? changeLocale,
+  }) {
+    return changeLocale?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    TResult Function(bool isCelcious)? changeUnit,
+    TResult Function(String locale)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (changeLocale != null) {
+      return changeLocale(locale);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeTheme value) changeTheme,
+    required TResult Function(_ChangeUnit value) changeUnit,
+    required TResult Function(_ChangeLocale value) changeLocale,
+  }) {
+    return changeLocale(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeTheme value)? changeTheme,
+    TResult? Function(_ChangeUnit value)? changeUnit,
+    TResult? Function(_ChangeLocale value)? changeLocale,
+  }) {
+    return changeLocale?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeTheme value)? changeTheme,
+    TResult Function(_ChangeUnit value)? changeUnit,
+    TResult Function(_ChangeLocale value)? changeLocale,
+    required TResult orElse(),
+  }) {
+    if (changeLocale != null) {
+      return changeLocale(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeLocale implements ApplicationBlocEvent {
+  const factory _ChangeLocale(final String locale) = _$ChangeLocaleImpl;
+
+  String get locale;
+  @JsonKey(ignore: true)
+  _$$ChangeLocaleImplCopyWith<_$ChangeLocaleImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ApplicationBlocState _$ApplicationBlocStateFromJson(Map<String, dynamic> json) {
   return _ApplicationState.fromJson(json);
 }
@@ -351,6 +508,7 @@ ApplicationBlocState _$ApplicationBlocStateFromJson(Map<String, dynamic> json) {
 mixin _$ApplicationBlocState {
   ThemeMode get themeMode => throw _privateConstructorUsedError;
   bool get isCelsius => throw _privateConstructorUsedError;
+  String get locale => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -364,7 +522,7 @@ abstract class $ApplicationBlocStateCopyWith<$Res> {
           $Res Function(ApplicationBlocState) then) =
       _$ApplicationBlocStateCopyWithImpl<$Res, ApplicationBlocState>;
   @useResult
-  $Res call({ThemeMode themeMode, bool isCelsius});
+  $Res call({ThemeMode themeMode, bool isCelsius, String locale});
 }
 
 /// @nodoc
@@ -383,6 +541,7 @@ class _$ApplicationBlocStateCopyWithImpl<$Res,
   $Res call({
     Object? themeMode = null,
     Object? isCelsius = null,
+    Object? locale = null,
   }) {
     return _then(_value.copyWith(
       themeMode: null == themeMode
@@ -393,6 +552,10 @@ class _$ApplicationBlocStateCopyWithImpl<$Res,
           ? _value.isCelsius
           : isCelsius // ignore: cast_nullable_to_non_nullable
               as bool,
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -405,7 +568,7 @@ abstract class _$$ApplicationStateImplCopyWith<$Res>
       __$$ApplicationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ThemeMode themeMode, bool isCelsius});
+  $Res call({ThemeMode themeMode, bool isCelsius, String locale});
 }
 
 /// @nodoc
@@ -421,6 +584,7 @@ class __$$ApplicationStateImplCopyWithImpl<$Res>
   $Res call({
     Object? themeMode = null,
     Object? isCelsius = null,
+    Object? locale = null,
   }) {
     return _then(_$ApplicationStateImpl(
       themeMode: null == themeMode
@@ -431,6 +595,10 @@ class __$$ApplicationStateImplCopyWithImpl<$Res>
           ? _value.isCelsius
           : isCelsius // ignore: cast_nullable_to_non_nullable
               as bool,
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -439,7 +607,9 @@ class __$$ApplicationStateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ApplicationStateImpl implements _ApplicationState {
   const _$ApplicationStateImpl(
-      {this.themeMode = ThemeMode.system, this.isCelsius = true});
+      {this.themeMode = ThemeMode.system,
+      this.isCelsius = true,
+      this.locale = "en"});
 
   factory _$ApplicationStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$ApplicationStateImplFromJson(json);
@@ -450,10 +620,13 @@ class _$ApplicationStateImpl implements _ApplicationState {
   @override
   @JsonKey()
   final bool isCelsius;
+  @override
+  @JsonKey()
+  final String locale;
 
   @override
   String toString() {
-    return 'ApplicationBlocState(themeMode: $themeMode, isCelsius: $isCelsius)';
+    return 'ApplicationBlocState(themeMode: $themeMode, isCelsius: $isCelsius, locale: $locale)';
   }
 
   @override
@@ -464,12 +637,13 @@ class _$ApplicationStateImpl implements _ApplicationState {
             (identical(other.themeMode, themeMode) ||
                 other.themeMode == themeMode) &&
             (identical(other.isCelsius, isCelsius) ||
-                other.isCelsius == isCelsius));
+                other.isCelsius == isCelsius) &&
+            (identical(other.locale, locale) || other.locale == locale));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, themeMode, isCelsius);
+  int get hashCode => Object.hash(runtimeType, themeMode, isCelsius, locale);
 
   @JsonKey(ignore: true)
   @override
@@ -489,7 +663,8 @@ class _$ApplicationStateImpl implements _ApplicationState {
 abstract class _ApplicationState implements ApplicationBlocState {
   const factory _ApplicationState(
       {final ThemeMode themeMode,
-      final bool isCelsius}) = _$ApplicationStateImpl;
+      final bool isCelsius,
+      final String locale}) = _$ApplicationStateImpl;
 
   factory _ApplicationState.fromJson(Map<String, dynamic> json) =
       _$ApplicationStateImpl.fromJson;
@@ -498,6 +673,8 @@ abstract class _ApplicationState implements ApplicationBlocState {
   ThemeMode get themeMode;
   @override
   bool get isCelsius;
+  @override
+  String get locale;
   @override
   @JsonKey(ignore: true)
   _$$ApplicationStateImplCopyWith<_$ApplicationStateImpl> get copyWith =>

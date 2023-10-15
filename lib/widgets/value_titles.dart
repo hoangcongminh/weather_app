@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/extension.dart';
+import 'package:weather_app/utils/extension.dart';
 
 class ValueTile extends StatelessWidget {
   final String label;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/utils/extension.dart';
 
 import 'settings_screen.dart';
 import 'weather_screen.dart';
@@ -56,14 +57,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) => changeTabIndex(index),
         currentIndex: tabIndex,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.cloud),
-            label: 'Weather',
+            icon: const Icon(Icons.cloud),
+            label: context.l10n.weather
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_rounded),
-            label: 'Settings',
+            icon: const Icon(Icons.settings_rounded),
+            label: context.l10n.settings,
           ),
         ],
       ),

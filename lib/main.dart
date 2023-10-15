@@ -6,6 +6,7 @@ import 'package:weather_app/blocs/application_bloc/application_bloc.dart';
 import 'package:weather_app/blocs/weather_bloc/weather_bloc.dart';
 import 'package:weather_app/theme.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'screens/main_screen.dart';
 import 'repositories/weather_repository.dart';
 
@@ -26,7 +27,7 @@ class WeatherApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => WeatherBloc(WeatherRepository())),
-        BlocProvider(create: (context) => ApplicationBloc())
+        BlocProvider(create: (context) => ApplicationBloc()),
       ],
       child: BlocBuilder<ApplicationBloc, ApplicationBlocState>(
         builder: (context, state) {
@@ -35,6 +36,9 @@ class WeatherApp extends StatelessWidget {
             darkTheme: ApplicationTheme.darkTheme,
             themeMode: state.themeMode,
             debugShowCheckedModeBanner: false,
+            locale: Locale(state.locale),
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             home: const HomePage(),
           );
         },

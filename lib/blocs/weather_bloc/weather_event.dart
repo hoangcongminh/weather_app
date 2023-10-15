@@ -9,3 +9,13 @@ class FeatchWeather extends WeatherEvent {
 
   FeatchWeather(this.lat, this.lon, this.isCelcious);
 }
+
+class FetchCurrentLocationWeather extends WeatherEvent {
+  final bool isCelcious;
+  FetchCurrentLocationWeather(this.isCelcious);
+}
+
+class RefreshWeather extends WeatherEvent {
+  final bool isCelcious;
+  RefreshWeather(this.isCelcious);
+}

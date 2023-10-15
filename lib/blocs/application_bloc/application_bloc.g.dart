@@ -12,6 +12,7 @@ _$ApplicationStateImpl _$$ApplicationStateImplFromJson(
       themeMode: $enumDecodeNullable(_$ThemeModeEnumMap, json['themeMode']) ??
           ThemeMode.system,
       isCelsius: json['isCelsius'] as bool? ?? true,
+      locale: json['locale'] as String? ?? "en",
     );
 
 Map<String, dynamic> _$$ApplicationStateImplToJson(
@@ -19,6 +20,7 @@ Map<String, dynamic> _$$ApplicationStateImplToJson(
     <String, dynamic>{
       'themeMode': _$ThemeModeEnumMap[instance.themeMode]!,
       'isCelsius': instance.isCelsius,
+      'locale': instance.locale,
     };
 
 const _$ThemeModeEnumMap = {

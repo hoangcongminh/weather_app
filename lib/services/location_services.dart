@@ -7,6 +7,11 @@ class LocationServices {
       permission = await Geolocator.requestPermission();
     }
 
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permantly denied, we cannot request permissions.');
+    }
+
     Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.medium,
     );

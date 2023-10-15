@@ -1,0 +1,13 @@
+{
+  "@@locale": "vi",
+  "weather": "Thời tiết",
+  "settings": "Cài đặt",
+  "theme": "Giao diện",
+  "light": "Sáng",
+  "dark": "Tối",
+  "unit": "Đơn vị",
+  "language": "Ngôn ngữ",
+  "english": "Tiếng anh",
+  "vietnamese": "Tiếng việt",
+  "search": "Tìm kiếm"
+}

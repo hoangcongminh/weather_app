@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "weather": "Weather",
+  "settings": "Settings",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "unit": "Unit",
+  "language": "Language",
+  "english": "English",
+  "vietnamese": "Vietnamese",
+  "search": "Search"
+}
